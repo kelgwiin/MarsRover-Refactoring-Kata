@@ -15,9 +15,8 @@ public class MarsRover {
             Move actionMove;
             actionMove = moveBuilder.getActionMove((char) instruction);
 
-            Coordinate newPosition;
-            newPosition = actionMove.doMovement(planet.getPosition());
-            planet.setPosition(newPosition);
+            planet.setActionMove(actionMove);
+            planet.doMovement();
         });
 
         return planet.toString();
